@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        padding-top: 56px; /* Push content below navbar */
+      }
+      .sidebar-link {
+        padding: 10px 15px;
+        display: block;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .sidebar-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+      .sidebar-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      .sidebar-fixed {
+        height: 100vh;
+        position: sticky;
+        top: 56px; /* Align with navbar */
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top px-3"
+      style="background-color: #0d6efd"
+    >
+      <div class="d-flex align-items-center">
+        <button
+          class="btn btn-outline-light d-lg-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <span class="navbar-brand ms-3 fw-bold text-white"
+          >Admin Dashboard</span
+        >
+      </div>
+    </nav>
+
+    <!-- Sidebar for small screens -->
+    <div
+      class="offcanvas offcanvas-start text-bg-dark"
+      tabindex="-1"
+      id="sidebar"
+      aria-labelledby="sidebarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebarLabel">Menu</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <div class="p-3">
+          <a href="#" class="sidebar-link"
+            ><i class="fas fa-chart-line me-2"></i> Dashboard</a
+          >
+          <a href="#" class="sidebar-link"
+            ><i class="fas fa-user-graduate me-2"></i> Students</a
+          >
+          <a href="#" class="sidebar-link"
+            ><i class="fas fa-book me-2"></i> Courses</a
+          >
+          <a href="#" class="sidebar-link"
+            ><i class="fas fa-file-alt me-2"></i> Exams</a
+          >
+          <a href="#" class="sidebar-link"
+            ><i class="fas fa-cog me-2"></i> Settings</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar for large screens -->
+        <div
+          class="col-lg-2 d-none d-lg-block bg-dark text-white sidebar-fixed p-3"
+        >
+          <div class="sidebar-title">Menu</div>
+          <a href="#" class="sidebar-link"
+            ><i class="fas fa-chart-line me-2"></i> Dashboard</a
+          >
+          <a href="#" class="sidebar-link"
+            ><i class="fas fa-user-graduate me-2"></i> Students</a
+          >
+          <a href="#" class="sidebar-link"
+            ><i class="fas fa-book me-2"></i> Courses</a
+          >
+          <a href="#" class="sidebar-link"
+            ><i class="fas fa-file-alt me-2"></i> Exams</a
+          >
+          <a href="#" class="sidebar-link"
+            ><i class="fas fa-cog me-2"></i> Settings</a
+          >
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-lg-10 pt-3">
+          <div class="p-3">
+            <h3 class="mb-4">Welcome, Admin 👋</h3>
+
+            <div class="row g-4">
+              <div class="col-md-6 col-xl-3">
+                <div class="card text-center shadow-sm">
+                  <div class="card-body">
+                    <i class="fas fa-users fa-2x text-primary mb-2"></i>
+                    <h5>Students</h5>
+                    <h3>1,240</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3">
+                <div class="card text-center shadow-sm">
+                  <div class="card-body">
+                    <i class="fas fa-book-open fa-2x text-success mb-2"></i>
+                    <h5>Courses</h5>
+                    <h3>128</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3">
+                <div class="card text-center shadow-sm">
+                  <div class="card-body">
+                    <i class="fas fa-file-alt fa-2x text-warning mb-2"></i>
+                    <h5>Exams</h5>
+                    <h3>54</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3">
+                <div class="card text-center shadow-sm">
+                  <div class="card-body">
+                    <i class="fas fa-user-shield fa-2x text-danger mb-2"></i>
+                    <h5>Admins</h5>
+                    <h3>5</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

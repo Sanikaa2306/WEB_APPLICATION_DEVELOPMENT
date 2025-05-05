@@ -1,0 +1,50 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="user" style="box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+    <div class="navbar-brand me-3" style="font-weight: bold; font-size: 1.5rem; color: #f8f9fa;">
+        MyApp
+    </div>
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="transition: color 0.3s;"
+           (mouseenter)="hover=true" (mouseleave)="hover=false" [style.color]="hover ? '#ffc107' : ''">Home</a>
+        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active" style="transition: color 0.3s;"
+           (mouseenter)="hover2=true" (mouseleave)="hover2=false" [style.color]="hover2 ? '#ffc107' : ''">Users</a>
+        <button class="btn btn-link nav-item nav-link" (click)="logout()" style="color: #f8f9fa; transition: color 0.3s;"
+           (mouseenter)="hover3=true" (mouseleave)="hover3=false" [style.color]="hover3 ? '#dc3545' : ''">Logout</button>
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="app-container bg-light p-4 rounded shadow-sm" [ngClass]="{ 'bg-light': user }" style="min-height: 80vh;">
+    <alert></alert>
+    <router-outlet></router-outlet>
+</div>
+
+<!-- footer -->
+<footer class="bg-dark text-light py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>About MyApp</h5>
+                <p>Simple Angular application which will do following actions: Register User, Login User, Show User
+                  Data on Profile Component.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Contact</h5>
+                <ul class="list-unstyled">
+                    <li>Email: sanuhingalkar2004@gmail.com</li>
+                    <li>Phone: +91 7028195407</li>
+                    <li>Address: Kulacharya Hostel,Near Akurdi Railway Station.</li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Follow Us</h5>
+                <a href="#" class="text-light me-3" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="text-light me-3" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-light me-3" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <small>&copy; 2025 MyApp. All rights reserved.</small>
+        </div>
+    </div>
+</footer>
